@@ -2,7 +2,9 @@
 import os
 
 # Bot settings
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+if not TELEGRAM_BOT_TOKEN:
+    raise ValueError("BOT_TOKEN environment variable not set. Please set it before running the bot.")
 
 # Free tier limits
 FREE_SIGNUP_CREDITS = 2  # Free summaries on signup
